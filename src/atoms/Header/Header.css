@@ -1,0 +1,21 @@
+.mobile_nav,
+.mobile_toggle_icon {
+  display: none;
+}
+
+@media screen and (max-width: 1080px) {
+  .web_nav_options {
+    display: none;
+  }
+  .mobile_nav,
+  .mobile_toggle_icon {
+    display: block;
+  }
+  .mobile_nav_options {
+    width: 100vw;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+  }
+}

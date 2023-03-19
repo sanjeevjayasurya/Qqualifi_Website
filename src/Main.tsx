@@ -2,18 +2,16 @@ import React from "react";
 import Footer from "./atoms/Footer/Footer";
 import Header from "./atoms/Header/Header";
 import Homepage from "./components/homepage/Homepage";
-import "./index.css";
-// import Main from "./main";
-import Main from "./Main";
+import RouteController from "./routes/RouteController";
 
-function App() {
+const Main = () => {
   return (
     <>
-      {/* <Header /> */}
-      <Main />
-      {/* <Footer /> */}
+      <Header />
+      <RouteController />
+      <Footer />
     </>
   );
-}
+};
 
-export default App;
+export default Main;
