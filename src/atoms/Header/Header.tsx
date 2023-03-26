@@ -13,7 +13,7 @@ const headerOptions = [
   },
   {
     name: "Plans",
-    pathName: PathNames.ABOUT,
+    pathName: PathNames.PLANS,
   },
   {
     name: "About us",
@@ -52,7 +52,7 @@ const Header = () => {
               {headerOptions.map((i: any, index: number) => (
                 <li
                   key={index}
-                  className="inline p-4"
+                  className="inline p-4 cursor-pointer"
                   onClick={() => navigate(i?.pathName)}
                 >
                   {i?.name}

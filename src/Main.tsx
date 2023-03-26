@@ -7,9 +7,7 @@ import RouteController from "./routes/RouteController";
 const Main = () => {
   return (
     <>
-      <Header />
       <RouteController />
-      <Footer />
     </>
   );
 };

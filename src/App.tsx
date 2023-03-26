@@ -9,9 +9,9 @@ import Main from "./Main";
 function App() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Main />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

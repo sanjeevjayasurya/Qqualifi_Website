@@ -1,0 +1,19 @@
+.plan_card_heading {
+  font-weight: 600;
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+.plan_detail_key_points {
+  padding-left: 4px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.description {
+  margin: 30px auto;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 400;
+  font-size: 16px;
+  text-align: start;
+  text-align-last: center;
+}
