@@ -2,7 +2,11 @@ import React from "react";
 import QButton from "../../atoms/QButton/QButton";
 import home_image from "../../assets/home_image.png";
 import "./homePage.css";
+import { setSignupModal } from "../../redux/slices/ModalSlices";
+import { useAppDispatch } from "../../redux/store";
 const Homepage = () => {
+  const dispatch = useAppDispatch();
+
   return (
     <div className="">
       <div className="px-20 pb-8 pt-10 flex items-center justify-center gap-x-10 w-full h-full bg-[#fff]">
@@ -27,7 +31,10 @@ const Homepage = () => {
             modern SaaS integrated platform
           </p>
           <div className="pt-6 pb-12">
-            <QButton label="Get Started" />
+            <QButton
+              label="Get Started"
+              onClick={() => dispatch(setSignupModal(true))}
+            />
           </div>
           <p style={{ color: "#686868", fontSize: 12, fontWeight: 400 }}>
             Check out the free Basic plan of the Qqualifi integrated platform*

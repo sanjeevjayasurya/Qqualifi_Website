@@ -20,6 +20,7 @@ const QButton = (props: QButtonProps) => {
         fontSize: 20,
         ...styles,
       }}
+      onClick={props.onClick}
     >
       {label}
     </button>
