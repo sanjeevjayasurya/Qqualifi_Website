@@ -1,0 +1,15 @@
+.form_label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: start;
+  padding-bottom: 5px;
+}
+.form_input {
+  border: 1px solid #a3a3a3;
+  color: #a3a3a3;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  /* padding-top: ; */
+}
