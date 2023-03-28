@@ -9,7 +9,7 @@ import { useNavigate } from "react-router";
 const headerOptions = [
   {
     name: "Products",
-    pathName: PathNames.ABOUT,
+    pathName: PathNames.PRODUCTS,
   },
   {
     name: "Plans",
@@ -88,7 +88,9 @@ const Header = () => {
                   {headerOptions.map((i: any, index: number) => (
                     <li
                       key={index}
-                      className={`${index % 2 !== 0 && "bg-[#F1FAFF]"}`}
+                      className={`cursor-pointer ${
+                        index % 2 !== 0 && "bg-[#F1FAFF]"
+                      }`}
                       onClick={() => navigate(i?.pathName)}
                     >
                       <div className={`py-4 pl-20`}>{i?.name}</div>
