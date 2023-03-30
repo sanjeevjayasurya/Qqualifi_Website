@@ -13,3 +13,17 @@
   width: 100%;
   /* padding-top: ; */
 }
+
+.signin_button_divider {
+  overflow: hidden;
+}
+
+.signin_button_divider::before,
+.signin_button_divider::after {
+  background-color: #686868;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  vertical-align: middle;
+  width: 40%;
+}

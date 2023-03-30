@@ -5,6 +5,8 @@ import { GrMenu } from "react-icons/gr";
 import "./Header.css";
 import { PathNames } from "../../routes/PathNames";
 import { useNavigate } from "react-router";
+import { setSignInModal } from "../../redux/slices/ModalSlices";
+import { useDispatch } from "react-redux";
 
 const headerOptions = [
   {
@@ -22,6 +24,8 @@ const headerOptions = [
 ];
 const Header = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [showMenuForMobileScreen, setShowMenuForMobileScreen] =
     useState<boolean>(false);
 
@@ -69,7 +73,12 @@ const Header = () => {
               />
             </div>
             <div>
-              <QButton label="Sign In" />
+              <QButton
+                label="Sign In"
+                onClick={() => {
+                  dispatch(setSignInModal(true));
+                }}
+              />
             </div>
           </div>
         </div>
@@ -102,7 +111,12 @@ const Header = () => {
                     <QButton label={"Request a Call back"} outlineVariant />
                   </div>
                   <div className="">
-                    <QButton label={"Sign In"} />
+                    <QButton
+                      label={"Sign In"}
+                      onClick={() => {
+                        dispatch(setSignInModal(true));
+                      }}
+                    />
                   </div>
                 </div>
               </div>
