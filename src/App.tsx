@@ -7,7 +7,6 @@ import OtpVerifyModal from "./components/Modals/OtpVerifyModal";
 import SignInModal from "./components/Modals/SignInModal";
 import SignUpModal from "./components/Modals/SignUpModal";
 import "./index.css";
-// import Main from "./main";
 import Main from "./Main";
 import { useAppSelector } from "./redux/store";
 
