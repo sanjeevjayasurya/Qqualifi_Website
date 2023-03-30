@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import Modal from "../../atoms/Modal/Modal";
 import QButton from "../../atoms/QButton/QButton";
-import { setSignupModal } from "../../redux/slices/ModalSlices";
+import {
+  setCreateInstitueModal,
+  setSignupModal,
+} from "../../redux/slices/ModalSlices";
 import { useAppDispatch } from "../../redux/store";
 import "./modal.css";
+import { GrFormClose } from "react-icons/gr";
+
 const SignUpModal = () => {
   const dispatch = useAppDispatch();
 
@@ -19,6 +24,12 @@ const SignUpModal = () => {
   return (
     <Modal>
       <div className="px-4 pb-8">
+        <div className="relative left-52 top-4">
+          <GrFormClose
+            className="text-2xl cursor-pointer"
+            onClick={closeModal}
+          />
+        </div>
         <h2 className="pb-5 font-[600] text-[18px]">Please add your details</h2>
         <div className="flex flex-col gap-y-5">
           <div>
@@ -71,7 +82,10 @@ const SignUpModal = () => {
           <div>
             <QButton
               label="Submit"
-              onClick={closeModal}
+              onClick={() => {
+                closeModal();
+                dispatch(setCreateInstitueModal(true));
+              }}
               styles={{ width: "100%" }}
             />
           </div>

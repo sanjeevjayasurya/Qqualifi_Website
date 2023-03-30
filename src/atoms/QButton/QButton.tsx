@@ -5,6 +5,7 @@ interface QButtonProps {
   onClick?: any;
   styles?: object;
   outlineVariant?: boolean;
+  disabled?: boolean;
 }
 const QButton = (props: QButtonProps) => {
   const { label, styles, outlineVariant } = props;
@@ -21,6 +22,7 @@ const QButton = (props: QButtonProps) => {
         ...styles,
       }}
       onClick={props.onClick}
+      disabled={props.disabled}
     >
       {label}
     </button>
