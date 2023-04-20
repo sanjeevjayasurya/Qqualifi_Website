@@ -11,11 +11,14 @@
   .mobile_toggle_icon {
     display: block;
   }
-  .mobile_nav_options {
-    width: 100vw;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    right: 0;
+
+  .header_btn {
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 400) {
+  .header_btn {
+    flex-direction: column;
   }
 }

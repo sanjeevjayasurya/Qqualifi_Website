@@ -3,32 +3,29 @@ import product_image from "../../assets/product_image.png";
 
 const Products = () => {
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="px-20 flex items-center justify-between ">
-        <div className="text-[#000] font-[700] text-6xl">
-          <span className="text-[#0D47A1]">One platform</span> for
-          <br /> all your educational <br />
-          institute needs
-        </div>
-        <div
-          className=" relative top-10"
-          style={{ zIndex: 999, flexBasis: 450 }}
-        >
+    <div className=" py-5  bg-[#fff]">
+      <div className="  ">
+        <div className="main_content  padding_main_content flex items-center justify-between lg:flex-row max-[1180px]:flex-col lg:text-start max-[1180px]:text-center md:whitespace-nowrap xs:whitespace-normal">
+          <h1
+            className="text-[56px] font-[700] leading-[72px]"
+            // style={{ whiteSpace: "nowrap" }}
+          >
+            <span className="grad_text">One platform for </span> <br />
+            all your educational <br /> institute needs
+          </h1>
           <img
-            // src={"../../assets/product_image.png"}
             src={product_image}
-            alt=""
-            width={"100%"}
-            height="100%"
+            // width="500px"
+            className="relative lg:w-[500px] max-[1180px]:w-[400px] top-10"
           />
         </div>
-      </div>
-      <div>
-        <section className="bg-[#F8FCFE]">
-          <div className="px-20 py-16">
-            <div className="pb-5 font-medium text-[36px] ">Products</div>
-            <div className="flex flex-col gap-y-3 text-[#686868] text-md ">
-              <p>
+        <div className="min-w-screen bg-[#F8FCFE]">
+          <div className="pt-12 py-16 main_content  padding_main_content ">
+            <h2 className="pb-5 font-[600]  md:text-[32px] xs:text-[24px]">
+              Products
+            </h2>
+            <section className="md:text-[18px] xs:text-[1rem] font-[400] text-[#686868] flex flex-col gap-y-4">
+              <p className="">
                 The Qqualifi platform is designed to help educational institutes
                 manage all day-to-day activities, including administrative
                 tasks, teaching, Classroom, student attendance, student
@@ -75,15 +72,15 @@ const Products = () => {
                 With the Qqualifi platform, institutes can manage their entire
                 institution with ease and efficiency.
               </p>
-            </div>
+            </section>
           </div>
-        </section>
-        <div className="px-20 py-12">
-          <section>
-            <div className="pb-5 font-medium text-[36px] ">
+        </div>
+        <div>
+          <div className="pt-12 py-16 main_content  padding_main_content ">
+            <h2 className="pb-5 font-[600] md:text-[32px] xs:text-[24px]">
               How does the Qqualifi SaaS-based integrated platform help?
-            </div>
-            <div className="flex flex-col gap-y-3 text-[#686868] text-md ">
+            </h2>
+            <section className="md:text-[18px] xs:text-[1rem] font-[400] text-[#686868] flex flex-col gap-y-4">
               <p>
                 First and foremost, Qqualifi helps institutes save time and
                 money. It automates many time-consuming and manual tasks,
@@ -106,8 +103,8 @@ const Products = () => {
                 features and benefits.Qqualifi is designed to help you
                 revolutionize your school through data-driven decision making.
               </p>
-            </div>
-          </section>
+            </section>
+          </div>
         </div>
       </div>
     </div>

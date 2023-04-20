@@ -19,3 +19,20 @@ code {
 *::-webkit-scrollbar {
   display: none;
 }
+
+.main_content {
+  width: 100%;
+  max-width: 80rem;
+  margin: auto;
+}
+
+.padding_main_content {
+  padding-left: 3.75rem;
+  padding-right: 3.75rem;
+}
+
+.grad_text {
+  background: -webkit-linear-gradient(left, #d956a7 10%, #565dfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -1,59 +1,33 @@
 import React from "react";
-import about_image from "../../assets/about_image.png";
-import about_thread_image from "../../assets/about_thread_image.png";
+import about_illustartion from "../../assets/about_illustartion.png";
+
 const About = () => {
+  const backgroundImage = {};
   return (
-    <div className=" flex flex-col">
-      <div>
-        <center
-          className="text-5xl font-black"
-          // style={{ lineHeight: "60px" }}
+    <div>
+      <div className="main_content padding_main_content relative min-h-full">
+        <div
+          className="min-h-[80vh] min-w-[100%]"
+          style={{
+            backgroundImage: `url(${about_illustartion})`,
+            // minHeight: "100px",
+            backgroundPosition: "center",
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+          }}
         >
-          <h1 className="text-[#202020]">
-            Unlock the power of <br />
-            <span className="text-[#0D47A1]">educational innovation!</span>
+          <h1 className="xs:text-[32px] sm:text-[56px] font-[700] md:leading-[72px] sm:leading-[72px] xs:leading-[37.3px] text-center sm:whitespace-nowrap xs:whitespace-normal relative top-16">
+            Unlock the power of <br />{" "}
+            <span className="grad_text">educational innovation!</span>
           </h1>
-          <div className="relative">
-            <img
-              src={about_image}
-              alt=""
-              width="80%"
-              height="50%"
-              style={{
-                objectFit: "contain",
-                objectPosition: "center",
-                position: "relative",
-                zIndex: 999,
-                //   background: "pink",
-              }}
-            />
-            <img
-              src={about_thread_image}
-              alt=""
-              width="50%"
-              height="50%"
-              className="absolute top-0 "
-              style={{
-                objectFit: "contain",
-                objectPosition: "center",
-                left: "20%",
-                zIndex: 10,
-                //   background: "pink",
-              }}
-            />
-          </div>
-        </center>
-        {/* <div className="" style={{ padding: "10px auto" }}>
-          
-        </div> */}
+        </div>
       </div>
-      <div className=" bg-[#F8FCFE]">
-        <div className="py-6 px-20">
-          <h2 className="pb-8 font-bold text-3xl text-[#000]">Who we are</h2>
-          <div
-            className="text-[#686868]"
-            style={{ fontWeight: 400, fontSize: 14 }}
-          >
+      <div className="bg-[#F8FCFE]">
+        <div className="py-12 main_content padding_main_content">
+          <h2 className="pb-4 font-[600] md:text-[32px] xs:text-[24px]">
+            Who we are
+          </h2>
+          <section className="md:text-[16px] xs:text-[16px] font-[400] text-[#686868]">
             <p className="pb-4">
               Qqualifi is an education-infrastructure SaaS company digitizing
               the education system.It is our mission to build a cutting-edge
@@ -75,7 +49,7 @@ const About = () => {
               dedicated to making the education system more accessible and
               effective.
             </p>
-          </div>
+          </section>
         </div>
       </div>
     </div>

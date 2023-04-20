@@ -1,3 +1,23 @@
-.home_page_right_content {
-  background-image: url("../../assets/home_image.png");
+.web_home_page {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1204px) {
+  .web_home_page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: "center";
+  }
+
+  .big_home_page_img {
+    width: 70%;
+  }
+  .small_home_page_img {
+    width: 15%;
+    left: 30px;
+    top: -100px;
+  }
 }

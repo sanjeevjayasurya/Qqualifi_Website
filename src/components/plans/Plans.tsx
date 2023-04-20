@@ -1,106 +1,101 @@
-import React from "react";
-import plan_cart from "../../assets/plan_cart.png";
 import QButton from "../../atoms/QButton/QButton";
-import PlanDetails from "./PlanDetails";
 import coming_soon_img from "../../assets/coming_soon.png";
 import { BiCheckCircle } from "react-icons/bi";
-import "./plans.css";
+import { setSignupModal } from "../../redux/slices/ModalSlices";
+import { useAppDispatch } from "../../redux/store";
+
 const Plans = () => {
+  const dispatch = useAppDispatch();
   return (
-    <div className="">
-      <div className="flex flex-col justify-center items-center">
-        <div className="px-20 flex items-center justify-center gap-x-40">
-          <div className="pt-10">
-            <div className="text-5xl font-bold leading-tight color-[#202020] text-start ">
-              Simple Plans.
-              <br /> Simple Prices
-            </div>
-            <div className="mt-10 text-[#686868] font-medium">
-              A flexible pricing structure that fits your needs - Get <br /> in
-              touch to discuss pricing
-            </div>
-          </div>
-          <div className="">
-            <img src={plan_cart} alt="" width={"80%"} height={"70%"} />
-          </div>
-        </div>
-        <div className="flex flex-col items-center justify-center plans pt-20 px-20 bg-[#F9FDFF] ">
-          <div className="flex gap-x-10">
+    <div>
+      <div className=" main_content padding_main_content pt-16 pb-10 text-center">
+        <h1 className="grad_text font-[700] xs:text-[32px] sm:text-[56px] xs:pb-4 sm:pb-0">
+          Simple Plans. Simple Prices
+        </h1>
+        <p className="font-[600] xs:text-[18px] sm:text-[24px] text-[#686868] ">
+          A flexible pricing structure that fits your needs - Get in touch to
+          discuss pricing
+        </p>
+      </div>
+      <div className="bg-[#F9FDFF]">
+        <div className="main_content padding_main_content pb-16">
+          <div className="pb-8 pt-16 flex items-stretch gap-x-36 gap-y-8 flex-wrap ">
             {planDetails.map((i: any, index: number) => (
               <div
-                className={`pt-5 pb-10 relative rounded-md basis-80 border border-slate-300 ${
-                  index % 2 !== 0
+                key={index}
+                className={` rounded-md border w-[290px] ${
+                  index % 2 != 0
                     ? "bg-[#0D47A1] text-[#fff]"
                     : "bg-[#fff] text-[#202020]"
                 }`}
-                key={index}
               >
-                {!i.comingSoon ? (
-                  <div className="px-4">
-                    <div className=" plan_card_heading flex justify-between">
-                      <div>{i.planTitle}</div>
+                {!i?.comingSoon ? (
+                  <div className=" h-full px-5 py-6 flex justify-between flex-col ">
+                    <div className="">
                       <div
-                        className={`${
-                          i?.purchase ? "text-[#A8E0FC]" : "text-[#000]"
-                        }`}
+                        className={`pb-4 flex items-center justify-between  font-[600] `}
                       >
-                        {i?.purchase ? "PAID" : "FREE"}
+                        <p className="xs:text-[20px] sm:text-[24px]">
+                          {i?.planTitle}
+                        </p>
+                        <p
+                          className={`xs:text-[28px] sm:text-[32px] ${
+                            i?.details ? "text-[#A8E0FC]" : "text-[#202020]"
+                          }`}
+                        >
+                          {i?.paid ? "PAID" : "FREE"}
+                        </p>
+                      </div>
+                      <div className="pr-10">
+                        {i.details.map((details: any, inde: number) => (
+                          <div className="pb-4 flex items-start justify-start">
+                            <span className="pt-1 pr-1">
+                              <BiCheckCircle />
+                            </span>
+                            <p className="leading-[22px] xs:text-[16px] sm:text-[18px]">
+                              {details}
+                            </p>
+                          </div>
+                        ))}
                       </div>
                     </div>
-                    <ul>
-                      {i.details.map((item: string, itemIndex: number) => (
-                        <li
-                          className={`line_detail mb-3 flex items-start `}
-                          key={itemIndex}
-                        >
-                          <BiCheckCircle className="mt-1" />
-                          <div className="plan_detail_key_points">{item}</div>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="">
+                      <QButton
+                        label="Explore now"
+                        className="xs:text-[16px] sm:text-[24px]"
+                        styles={{ width: "100%" }}
+                        onClick={() => dispatch(setSignupModal(true))}
+                      />
+                    </div>{" "}
                   </div>
                 ) : (
-                  <>
-                    <center className="pt-8">
-                      <div className="plan_card_heading">
-                        <div>Premium</div>
-                        <div className="text-[#12B0FF]">PAID</div>
-                      </div>
-
-                      <div className="py-3 font-[400] text-[20px]">
+                  <div className="flex justify-between flex-col">
+                    <div className="px-5 py-6 pt-10 text-center">
+                      <p className="xs:text-[32px] sm:text-[48px] font-[700]">
+                        {i?.planTitle}
+                      </p>
+                      <p className="pb-5 text-[#12B0FF] xs:text-[24px] sm:text-[32px] font-[700]">
+                        {i?.paid && "PAID"}
+                      </p>
+                      <p className="pb-3 xs:text-[16px] sm:text-[20px] font-[400]">
                         Every thing in the advanced plan
-                      </div>
-                      <div className="font-[600] text-[24px]">Coming soon</div>
-                    </center>
-                    <div>
-                      <img
-                        src={coming_soon_img}
-                        alt=""
-                        width={"100%"}
-                        height={"100%"}
-                        style={{
-                          objectFit: "contain",
-                          position: "relative",
-                          top: "2.5rem",
-                        }}
-                      />
+                      </p>
+                      <p className="text-[24px] font-[600]">Coming Soon</p>
                     </div>
-                  </>
+                    <img
+                      src={coming_soon_img}
+                      alt=""
+                      width={"100%"}
+                      className="pt-44"
+                    />
+                  </div>
                 )}
-                <div className="absolute bottom-8  w-full">
-                  {!i.comingSoon && (
-                    <center>
-                      <QButton label="Explore now" styles={{ width: "80%" }} />
-                    </center>
-                  )}
-                </div>
               </div>
             ))}
           </div>
-          <div className="description ">
+          <div className="text-[#686868] text-center font-[400] xs:text-[14px] sm:text-[20px] ">
             In case you have any questions or need any assistance, the team at
-            Qqualifi will be happy to assist. You can get in touch with us{" "}
-            {/* <br /> */}
+            Qqualifi will be happy to assist. You can get in touch with us
             through the website or by email:{" "}
             <span className="text-[#0081C1]">reachus@qqualifi.com</span> and we
             will be more than happy to assist you.
@@ -112,11 +107,12 @@ const Plans = () => {
 };
 
 export default Plans;
+
 const planDetails: any = [
   {
     planTitle: "Basic",
     comingSoon: false,
-    purchase: false,
+    paid: false,
     details: [
       "Student’s Profile ",
       "Staff and Teachers Profile",
@@ -132,7 +128,7 @@ const planDetails: any = [
   {
     planTitle: "Advanced",
     comingSoon: false,
-    purchase: true,
+    paid: true,
     details: [
       "Everything in the basic plan transportation",
       "Exam planner",
@@ -156,7 +152,7 @@ const planDetails: any = [
   {
     planTitle: "Premium",
     comingSoon: true,
-    purchase: true,
+    paid: true,
     details: [],
   },
   // Premium: [false],
@@ -167,21 +163,3 @@ const planCost: any = {
   Advanced: true,
   Premium: true,
 };
-
-// {Object.keys(planDetails).map((i: any, index: number) => (
-//   <div
-//     key={i}
-//     className={`flex flex-col basis-80 border border-slate-300 rounded-md ${
-//       index % 2 !== 0
-//         ? "bg-[#0D47A1] text-[#fff]"
-//         : "bg-[none] text-[#000]"
-//     }`}
-//   >
-//     <PlanDetails
-//       details={planDetails[i]}
-//       planType={i}
-//       planCost={planCost[i]}
-//       comingSoon={!planDetails[i][0] ? true : false}
-//     />
-//   </div>
-// ))}

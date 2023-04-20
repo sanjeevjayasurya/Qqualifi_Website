@@ -5,7 +5,7 @@ import { GrMenu } from "react-icons/gr";
 import "./Header.css";
 import { PathNames } from "../../routes/PathNames";
 import { useNavigate } from "react-router";
-import { setSignInModal } from "../../redux/slices/ModalSlices";
+import { setSignInModal, setSignupModal } from "../../redux/slices/ModalSlices";
 import { useDispatch } from "react-redux";
 
 const headerOptions = [
@@ -34,97 +34,75 @@ const Header = () => {
   };
 
   return (
-    <nav
-      className="py-4  px-20 flex  items-center sticky top-0 bg-[#fff] "
-      style={{ zIndex: 9999 }}
+    <div
+      className="min-w-screen py-5 sticky top-0 bg-[#fff]"
+      style={{ zIndex: "1000" }}
     >
-      {/* image */}
-      <div className="flex-1/5 ">
-        <img
-          src={main_logo}
-          alt=""
-          className="cursor-pointer"
-          onClick={() => navigate(PathNames.HOME_PAGE)}
-        />
-      </div>
-      {/* options */}
-      <div className=" basis-full float-right ">
-        {/* app */}
-        <div className="web_nav_options flex items-center justify-end gap-x-52">
-          <div>
-            <ul className="inline-block">
-              {headerOptions.map((i: any, index: number) => (
-                <li
-                  key={index}
-                  className="inline p-4 cursor-pointer"
-                  onClick={() => navigate(i?.pathName)}
-                >
-                  {i?.name}
-                </li>
-              ))}
-            </ul>
+      <div className="">
+        <div className="main_content padding_main_content flex  items-center justify-between ">
+          <div className="" onClick={() => navigate(PathNames.HOME_PAGE)}>
+            <img src={main_logo} alt="" width={150} />
           </div>
-          <div className="flex ">
-            <div className="pr-5">
-              <QButton
-                label="Request a Call back"
-                // styles={{ marginLeft: "100px" }}
-                outlineVariant
-              />
-            </div>
-            <div>
-              <QButton
-                label="Sign In"
-                onClick={() => {
-                  dispatch(setSignInModal(true));
-                }}
-              />
-            </div>
+          <ul className="web_nav_options flex items-center flex-row ">
+            {headerOptions.map((i, index: number) => (
+              <li
+                className="px-4 text-[20px] font-semibold cursor-pointer"
+                onClick={() => navigate(i.pathName)}
+              >
+                {i?.name}
+              </li>
+            ))}
+          </ul>
+          <div className="web_nav_options">
+            <QButton
+              label="Request a Call Back"
+              outlineVariant
+              styles={{ marginRight: 10 }}
+              onClick={() => dispatch(setSignupModal(true))}
+            />
+            <QButton
+              label="Sign In"
+              onClick={() => dispatch(setSignInModal(true))}
+            />
+          </div>
+          <div className="mobile_nav ">
+            <GrMenu className="" onClick={toggleMobileNavOptions} />
           </div>
         </div>
-        {/* mobile */}
-        <div className="mobile_nav ">
-          <div
-            className="mobile_toggle_icon float-right cursor-pointer"
-            onClick={toggleMobileNavOptions}
-          >
-            <GrMenu />
-          </div>
+        <div className="mobile_nav w-screen">
           {showMenuForMobileScreen && (
-            <div className="mobile_nav_options w-full bg-[#fff] pb-8 border border-slate-400">
-              <div className="">
-                <ul>
-                  {headerOptions.map((i: any, index: number) => (
-                    <li
-                      key={index}
-                      className={`cursor-pointer ${
-                        index % 2 !== 0 && "bg-[#F1FAFF]"
-                      }`}
-                      onClick={() => navigate(i?.pathName)}
-                    >
-                      <div className={`py-4 pl-20`}>{i?.name}</div>
-                    </li>
-                  ))}
-                </ul>
-                <div className="pl-20 flex">
-                  <div className=" pr-10">
-                    <QButton label={"Request a Call back"} outlineVariant />
-                  </div>
-                  <div className="">
-                    <QButton
-                      label={"Sign In"}
-                      onClick={() => {
-                        dispatch(setSignInModal(true));
-                      }}
-                    />
-                  </div>
-                </div>
+            <>
+              <ul className="">
+                {headerOptions.map((i: any, index: number) => (
+                  <li
+                    className={`mobile_options !px-0 py-4 ${
+                      index % 2 !== 0 ? "bg-[#F1FAFF]" : "bg-[#fff]"
+                    }`}
+                    onClick={() => navigate(i.pathName)}
+                  >
+                    <span className="main_content padding_main_content text-xl font-semibold cursor-pointer px-5">
+                      {i?.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <div className="main_content padding_main_content px-5  flex  flex-wrap items-center flex-wrap">
+                <QButton
+                  label="Request a Call Back"
+                  outlineVariant
+                  styles={{ marginRight: 10, marginBottom: 3 }}
+                  onClick={() => dispatch(setSignupModal(true))}
+                />
+                <QButton
+                  label="Sign In"
+                  onClick={() => dispatch(setSignupModal(true))}
+                />
               </div>
-            </div>
+            </>
           )}
         </div>
       </div>
-    </nav>
+    </div>
   );
 };
 

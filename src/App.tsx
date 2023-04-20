@@ -20,9 +20,18 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Main />
-      <Footer />
+      <div
+        style={{
+          height: "100vh",
+          width: "100vw",
+          margin: "0px auto",
+          overflowX: "hidden",
+        }}
+      >
+        <Header />
+        <Main />
+        <Footer />
+      </div>
       {SignUp && <SignUpModal />}
       {createInstitute && <CreateInstitutionModal />}
       {signIn && <SignInModal />}
