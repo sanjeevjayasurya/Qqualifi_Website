@@ -16,14 +16,14 @@ const CreateInstitutionModal = () => {
 
   return (
     <Modal>
-      <div className="relative px-4 pb-8" style={{ width: 450 }}>
-        <div className="relative left-[194px] top-4">
+      <div className="relative px-4 pb-8">
+        <div className="absolute right-4 top-4">
           <GrFormClose
             className="text-2xl cursor-pointer"
             onClick={closeModal}
           />
         </div>
-        <h2 className="pb-5 font-[600] text-[18px]">Please add your details</h2>
+        <h2 className="pb-5 font-[600] text-[18px] pt-10">Please add your details</h2>
         <div
           className="flex flex-col gap-y-3"
           style={{ maxHeight: 350, overflowY: "scroll" }}

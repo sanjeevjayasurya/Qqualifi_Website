@@ -15,13 +15,13 @@ const SignInModal = () => {
   return (
     <Modal>
       <div className="px-4 pb-8">
-        <div className="relative left-48 top-2">
+        <div className="absolute right-4 top-4">
           <GrFormClose
             className="text-2xl cursor-pointer"
             onClick={closeModal}
           />
         </div>
-        <h2 className="pb-5 font-[600] text-[18px]">Get Started</h2>
+        <h2 className="pb-5 font-[600] text-[18px] pt-10">Get Started</h2>
         <div>
           <div className="pb-4">
             <label className="form_label">Your Mobile Number:</label>

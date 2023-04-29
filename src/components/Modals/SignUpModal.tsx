@@ -23,14 +23,14 @@ const SignUpModal = () => {
   };
   return (
     <Modal>
-      <div className="px-4 pb-8">
-        <div className="relative left-52 top-4">
+      <div className="px-4 pb-8 relative">
+        <div className="absolute right-4 top-4">
           <GrFormClose
             className="text-2xl cursor-pointer"
             onClick={closeModal}
           />
         </div>
-        <h2 className="pb-5 font-[600] text-[18px]">Please add your details</h2>
+        <h2 className="pb-5 font-[600] text-[18px] pt-10">Please add your details</h2>
         <div className="flex flex-col gap-y-5">
           <div>
             <label className="form_label">Your name</label>

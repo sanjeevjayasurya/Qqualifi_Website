@@ -24,13 +24,13 @@ const OtpVerifyModal = () => {
   return (
     <Modal>
       <div className="px-5 pb-8">
-        <div className="relative left-56 top-2">
+        <div className="absolute right-4 top-4">
           <GrFormClose
             className="text-2xl cursor-pointer"
             onClick={handleCloseModal}
           />
         </div>
-        <h2 className="pb-6 font-[600] text-[20px]">Get Started</h2>
+        <h2 className="pb-6 font-[600] text-[20px] pt-10">Get Started</h2>
         <div>
           <p className="pb-4 px-4 text-sm font-medium">
             Enter the 6 digit OTP send via SMS on ur phone (+91 9842XXXXXX)

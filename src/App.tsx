@@ -1,7 +1,5 @@
-import React from "react";
 import Footer from "./atoms/Footer/Footer";
 import Header from "./atoms/Header/Header";
-import Homepage from "./components/homepage/Homepage";
 import CreateInstitutionModal from "./components/Modals/CreateInstitutionModal";
 import OtpVerifyModal from "./components/Modals/OtpVerifyModal";
 import SignInModal from "./components/Modals/SignInModal";

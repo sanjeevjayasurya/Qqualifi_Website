@@ -13,7 +13,7 @@ const Homepage = () => {
     <div className="main_content padding_main_content mb-10  ">
       <div className="web_home_page">
         <div className=" pt-10 xs:whitespace-normal md:whitespace-nowrap xs: break-words md:break-all">
-          <div className=" pb-5 font-[700]   xs:text-[32px] md:text-[3rem] text-[#000] leading-[62px]">
+          <div className=" pb-5 font-[700] leading-[36px] xs:text-[32px] md:text-[3rem] text-[#000] md:leading-[62px]">
             <span className="grad_text ">Cloud-Based</span>
             <br /> integrated platform for <br />
             educational institutes
@@ -39,7 +39,6 @@ const Homepage = () => {
             style={{
               maxWidth: "100%",
               boxShadow: "2px 2px 20px 6px rgba(0,0,0,0.1)",
-              borderRadius: 15,
               position: "relative",
               right: "-70px",
               top: "20px",
@@ -48,10 +47,9 @@ const Homepage = () => {
           <img
             src={home_mobile_view}
             alt=""
-            className="small_home_page_img w-[20%] relative bottom-[150px] left-[25px]"
+            className="small_home_page_img w-[20%] relative bottom-[150px] left-[25px] md:rounded-[15px]"
             style={{
               boxShadow: "2px 2px 20px 6px rgba(0,0,0,0.2)",
-              borderRadius: 15,
             }}
           />
         </div>
