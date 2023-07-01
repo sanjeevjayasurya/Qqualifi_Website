@@ -22,7 +22,7 @@ const Footer = () => {
             />
             <p className="text-start pb-5">
               Bengaluru, Karnataka- 560078 <br /> reachus@qqualifi.com <br />{" "}
-              +91-900000000 (9 AM - 8 PM Everyday)
+              (9 AM - 8 PM Everyday)
             </p>
             <div className="flex items-center ">
               <p className="pr-2 ">Made with love in India </p>
@@ -57,7 +57,7 @@ const Footer = () => {
           </div>
         </div>
         <p className="text-[14px] font-[400]">
-          Copyright Qqualifi Technologies 2022. All rights reserved.
+          Copyright Qqualifi Technologies 2023. All rights reserved.
         </p>
       </div>
     </footer>
