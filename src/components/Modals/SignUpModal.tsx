@@ -102,13 +102,10 @@ const roles = [
     role: "Teacher",
   },
   {
-    role: "Student",
-  },
-  {
     role: "School Admin",
   },
   {
-    role: "principal",
+    role: "Principal",
   },
   {
     role: "School Owner",
